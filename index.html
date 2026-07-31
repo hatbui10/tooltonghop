@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Công Cụ & Dự Án - Dạng Lưới</title>
+    <title>Danh Sách Công Cụ & Dự Án - Siêu Mượt</title>
     <style>
         :root {
-            --bg-color: #1e1e1e;
-            --card-bg: #252526;
-            --text-color: #d4d4d4;
-            --accent-color: #007acc;
-            --accent-hover: #0098ff;
-            --border-color: #3f3f46;
+            --bg-color: #0f0c1b;
+            --card-bg: #161026;
+            --text-color: #f3f0ff;
+            --border-color: rgba(255, 255, 255, 0.15);
         }
 
         * {
@@ -36,25 +34,31 @@
             max-width: 600px;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+                        0 0 20px rgba(0, 242, 254, 0.15);
+            /* Tăng tốc phần cứng GPU giúp cuộn mượt mà */
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         h1 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 14px;
+            text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+            letter-spacing: 0.5px;
         }
 
         /* Thiết lập dạng lưới (Grid) */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột */
-            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
         }
 
         .btn {
@@ -63,32 +67,40 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-color: #2d2d2d;
+            background-color: #211938;
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 10px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            font-size: 0.88rem;
+            padding: 18px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.92rem;
             font-weight: 500;
-            gap: 6px;
-            transition: all 0.2s ease;
+            gap: 8px;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .btn:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-hover);
-            transform: translateY(-2px);
+            background-color: #2b1f4f;
+            border-color: #00f2fe;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
         }
 
         .btn .icon {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            transition: transform 0.2s ease;
         }
 
-        /* Trên màn hình rất nhỏ thì cho về 1 cột hoặc giữ 2 cột tùy ý */
+        .btn:hover .icon {
+            transform: scale(1.15);
+        }
+
+        /* Thích ứng màn hình nhỏ */
         @media (max-width: 400px) {
             .grid-container {
-                grid-template-columns: 1fr; /* Thành 1 cột trên màn hình siêu nhỏ */
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -102,9 +114,13 @@
                 <span class="icon">📚</span>
                 <span>Hướng Dẫn CSS</span>
             </a>
+            <a href="https://hatbui10.github.io/vscodemini/" class="btn" target="_blank">
+                <span class="icon">💻</span>
+                <span>VS code mini</span>
+            </a>
             <a href="https://hatbui10.github.io/htmltool/" class="btn" target="_blank">
                 <span class="icon">🛠️</span>
-                <span>Mini VS Code</span>
+                <span>Html tool</span>
             </a>
             <a href="https://github.com/hatbui10/xeplich" class="btn" target="_blank">
                 <span class="icon">📂</span>
