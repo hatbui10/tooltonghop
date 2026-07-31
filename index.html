@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Công Cụ & Dự Án - Dạng Lưới</title>
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --card-bg: #252526;
+            --text-color: #d4d4d4;
+            --accent-color: #007acc;
+            --accent-hover: #0098ff;
+            --border-color: #3f3f46;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* Thiết lập dạng lưới (Grid) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột */
+            gap: 10px;
+        }
+
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #2d2d2d;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 0.88rem;
+            font-weight: 500;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn .icon {
+            font-size: 1.4rem;
+        }
+
+        /* Trên màn hình rất nhỏ thì cho về 1 cột hoặc giữ 2 cột tùy ý */
+        @media (max-width: 400px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Thành 1 cột trên màn hình siêu nhỏ */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 Danh Sách Dự Án & Công Cụ</h1>
+        <div class="grid-container">
+            <a href="https://hatbui10.github.io/huongdancss/" class="btn" target="_blank">
+                <span class="icon">📚</span>
+                <span>Hướng Dẫn CSS</span>
+            </a>
+            <a href="https://hatbui10.github.io/htmltool/" class="btn" target="_blank">
+                <span class="icon">🛠️</span>
+                <span>Mini VS Code</span>
+            </a>
+            <a href="https://github.com/hatbui10/xeplich" class="btn" target="_blank">
+                <span class="icon">📂</span>
+                <span>GitHub Xếp Lịch</span>
+            </a>
+            <a href="https://hatbui10.github.io/taofilehtml/" class="btn" target="_blank">
+                <span class="icon">📄</span>
+                <span>Tạo File HTML</span>
+            </a>
+            <a href="https://hatbui10.github.io/baomatfile/" class="btn" target="_blank">
+                <span class="icon">🔒</span>
+                <span>Bảo Mật File</span>
+            </a>
+            <a href="https://hatbui10.github.io/taotaikhoan/" class="btn" target="_blank">
+                <span class="icon">👤</span>
+                <span>Tạo Tài Khoản</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
